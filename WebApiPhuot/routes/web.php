@@ -21,10 +21,7 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('test1');
 });
-<<<<<<< HEAD
+
 Route::get('/NhomPhuot', function() {
     return view('test2');
 });
-=======
-
->>>>>>> 9b2ba0404b1ac0c959cfe202c9f3c874485b48dd
