@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('test1');
 });
+Route::get('/NhomPhuot', function() {
+    return view('test2');
+});
