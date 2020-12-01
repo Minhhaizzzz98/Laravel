@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\LoTrinh;
+use App\ChiTietNhom;
+use App\ChiTietLichTrinhNhom;   
 class NhomPhuot extends Model
 {
     public $timestamps = false;
@@ -19,9 +21,19 @@ class NhomPhuot extends Model
         return $this->hasMany('App\LoTrinh', 'nhom_id', 'id');
     }
 
+
     public function ThanhVienNhoms() {
         return $this->hasMany('App\ThanhVienNhom', 'nhom_id', 'id');
     }
     
     
+
+    public function ChiTietNhom(){
+        return $this->hashMany('App\ChiTietNhom','chitiet_id','id');
+    }
+
+    public function ChiTietLichTrinhNhoms(){
+        return $this->hashMany('App\ChiTietLichTrinhNhom','chitiet_id','id');
+    }
+
 }

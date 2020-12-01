@@ -1,4 +1,4 @@
-console.log('start');
+console.log('start nhóm phượt');
 var app = angular.module("app", [], function($interpolateProvider) {
 	$interpolateProvider.startSymbol('<%');
 	$interpolateProvider.endSymbol('%>');
@@ -7,10 +7,9 @@ var app = angular.module("app", [], function($interpolateProvider) {
 
 
 app.controller('AppController', function($scope, $http){
-    $http.get('http://localhost/Laravel/WebApiPhuot/public/api/NhomPhuot').then(function(res){
+    $http.get('http://phuot-app-test1.byethost16.com/public/api/NhomPhuot').then(function(res){
         console.log(res);
-        $scope.nhomphuots = res.data.data;   
-        console.log(res.data.data);   
+        $scope.nhomphuots = res.data.data;
     });
 
 
