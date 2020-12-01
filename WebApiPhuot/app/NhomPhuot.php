@@ -21,6 +21,13 @@ class NhomPhuot extends Model
         return $this->hasMany('App\LoTrinh', 'nhom_id', 'id');
     }
 
+
+    public function ThanhVienNhoms() {
+        return $this->hasMany('App\ThanhVienNhom', 'nhom_id', 'id');
+    }
+    
+    
+
     public function ChiTietNhom(){
         return $this->hashMany('App\ChiTietNhom','chitiet_id','id');
     }
@@ -28,4 +35,5 @@ class NhomPhuot extends Model
     public function ChiTietLichTrinhNhoms(){
         return $this->hashMany('App\ChiTietLichTrinhNhom','chitiet_id','id');
     }
+
 }
