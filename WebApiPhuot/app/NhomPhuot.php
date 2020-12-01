@@ -18,4 +18,10 @@ class NhomPhuot extends Model
     public function LoTrinhs() {
         return $this->hasMany('App\LoTrinh', 'nhom_id', 'id');
     }
+
+    public function ThanhVienNhoms() {
+        return $this->hasMany('App\ThanhVienNhom', 'nhom_id', 'id');
+    }
+    
+    
 }

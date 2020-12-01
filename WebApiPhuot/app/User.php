@@ -40,4 +40,7 @@ class User extends Authenticatable
     public function BaiViets(){
         return $this->hasMany('App\BaiViet', 'user_id', 'id');
     }
+    public function NhomPhuots() {
+        return $this->hasMany('App\NhomPhuot', 'nhom_id', 'id');
+    }
 }

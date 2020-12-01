@@ -15,13 +15,18 @@ class ApiNhomPhuotController extends Controller
      */
     public function index()
     {
-        $data = NhomPhuot::where('status', '<>', '-1')->orderBy('id', 'DESC')->get();
+        // $users = User::join('posts', 'posts.user_id', '=', 'users.id')
+        //       ->join('comments', 'comments.post_id', '=', 'posts.id')
+        //       ->get(['users.*', 'posts.descrption']);
+        $data = NhomPhuot::with('ThanhVienNhoms')
+        ->where('status', '<>', '-1')->orderBy('id', 'DESC')->get();
         
         
-        
+
         if($data->count() > 0) {
             return response()->json([
                 'data' => $data,
+
                 'message' => 'Hiển thị thành công'
             ], 200);
         }
